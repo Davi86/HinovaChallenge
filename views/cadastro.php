@@ -40,7 +40,7 @@
                 </div>
             </nav>     
             <br>
-            <form id="formulario" data-toggle="validator">
+            <form id="formulario">
                         <div class="form-group">
                             <input type="hidden" name="idCliente" id="idCliente">
                             <input name="nome" type="text" class="form-control-sm form-control mb-2" id="nome" placeholder="Nome Completo" required="" aria-required="true">
@@ -183,7 +183,6 @@
 
             $.get(url, function(dataReturn) {
                 alert("Usuário cadastro no banco de dados!");
-                $('#mostrarResult').html(dataReturn);
                 $("#formulario input").val("");
             });
         }

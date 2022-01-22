@@ -1,8 +1,5 @@
 <?php 
-    namespace Controllers;
-
-    use Models\dbConexao; 
-    require_once 'dbconexao.php';
+    require_once '../model/dbConexao.php';
 
     $login = $_POST['username']; 
 	$senha = $_POST['senha'];
@@ -11,21 +8,21 @@
     
         if ($login == "" || $login == null and $senha == "" || $senha == null) {
     
-           ?><script type="text/javascript">alert("Preencha todos os campos!");window.location.href='index.php';  </script><?php
+           ?><script type="text/javascript">alert("Preencha todos os campos!");window.location.href='../index.php';  </script><?php
         }elseif ($login == "" || $login == null) {
         
-           ?><script type="text/javascript">alert("Insira o Login!");window.location.href='index.php';  </script><?php
+           ?><script type="text/javascript">alert("Insira o Login!");window.location.href='../index.php';  </script><?php
         }elseif ($senha == "" || $senha == null){
         
-            ?><script type="text/javascript">alert"Insira a Senha!");window.location.href='index.php';  </script><?php
+            ?><script type="text/javascript">alert"Insira a Senha!");window.location.href='../index.php';  </script><?php
         }else{
             if (mysqli_num_rows($verifica)<=0){ 
         
-        ?><script type="text/javascript">alert("Login ou Senha Invalidos!"); window.location.href='index.php'; </script><?php
+        ?><script type="text/javascript">alert("Login ou Senha Invalidos!"); window.location.href='../index.php'; </script><?php
             
             }else{
             //echo "Logado com Sucesso!";
-                header('location: inicial.php');
+                header('location: ../views/cadastro.php');
             }
         }
 

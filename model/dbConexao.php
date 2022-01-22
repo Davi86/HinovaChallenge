@@ -1,14 +1,10 @@
 <?php
-    namespace Models;
+    include("../config/config.php");
 
-    abstract class dbConexao{
+    $conn = mysqli_connect(HOST, USER,PASS,DB);
 
-        #Connect to database
-        protected function conectaDB(){
-            try{
-                return $con= new \PDO(dsn:"mysql:host=".HOST.";dbname=".DB."",username:USER, password: PASS);
-            }catch(\PDOException $erro){
-                return $erro->getMessage();
-            }
-        }
+    //Caso ocorra algum problema quando a conexão for solicitada
+    if(!$conn){
+        die("Connection failed: ".mysqli_connect_error());
     }
+?>

@@ -12,8 +12,8 @@
     //Caminho Indice
     define('DIRREQ',"{$_SERVER['DOCUMENT_ROOT']}{$bar}{$pastaInterna}");
 
-    #Incluir arquivos
-    include(DIRREQ.'lib/composer/vendor/autoload.php');
+    // #Incluir arquivos
+    // include(DIRREQ.'lib/composer/vendor/autoload.php');
 
     #Atalhos
     define('DIRIMG', DIRPAGE.'img/');
